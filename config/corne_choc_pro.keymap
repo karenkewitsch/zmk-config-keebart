@@ -76,9 +76,9 @@
 
         symbol {
             bindings = <
-&trans  &kp GRAVE  &kp LT     &kp GREATER_THAN  &kp MINUS  &kp PIPE       &trans  &trans  &kp CARET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR        &trans     &trans
-&trans  &kp EXCL   &kp ASTRK  &kp FSLH          &kp EQUAL  &kp AMPERSAND  &trans  &trans  &kp HASH   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DQT           &kp COLON  &trans
-&trans  &kp TILDE  &kp PLUS   &kp LBKT          &kp RBKT   &kp PERCENT                    &kp AT     &kp SEMI              &trans                 &kp SINGLE_QUOTE  &trans     &trans
+&trans  &trans     &kp LT     &kp GREATER_THAN  &kp MINUS  &kp PIPE       &trans  &trans  &kp CARET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR        &trans         &trans
+&trans  &kp EXCL   &kp ASTRK  &kp FSLH          &kp EQUAL  &kp AMPERSAND  &trans  &trans  &kp HASH   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DQT           &kp COLON      &trans
+&trans  &kp TILDE  &kp PLUS   &kp LBKT          &kp RBKT   &kp PERCENT                    &kp AT     &none                 &kp GRAVE              &kp SINGLE_QUOTE  &kp SEMICOLON  &trans
                               &trans            &trans     &trans                         &trans     &trans                &trans
             >;
 
