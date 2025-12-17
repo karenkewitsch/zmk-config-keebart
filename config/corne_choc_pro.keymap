@@ -28,7 +28,7 @@
     combos {
         compatible = "zmk,combos";
 
-        escape {
+        combo_escape {
             bindings = <&kp ESC>;
             key-positions = <18 17>;
             layers = <0>;
