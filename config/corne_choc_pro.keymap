@@ -13,6 +13,7 @@
 // unicode extension: Overwrite default behavior properties
 &uc {
   default-mode = <UC_MODE_MACOS>;
+  macos-key = <>;
 };
 
 &mt { flavor = "tap-preferred"; };
