@@ -11,10 +11,7 @@
 
 &mt { flavor = "tap-preferred"; };
 
-&lt {
-    tapping-term-ms = <175>;
-    flavor = "hold-preferred";
-};
+&lt { tapping-term-ms = <175>; };
 
 / {
     chosen { zmk,physical-layout = &default_layout; };
