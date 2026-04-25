@@ -11,7 +11,10 @@
 
 &mt { flavor = "tap-preferred"; };
 
-&lt { tapping-term-ms = <175>; quick-tap-ms = <200>; };
+&lt {
+    tapping-term-ms = <175>;
+    quick-tap-ms = <200>;
+};
 
 / {
     chosen { zmk,physical-layout = &default_layout; };
@@ -60,20 +63,20 @@
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
 
             bindings = <
-&none  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &none  &none  &kp F6        &kp F7  &kp F8        &kp F9        &kp F10       &none
-&none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &none  &none  &kp NUMBER_6  &kp N7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
-&none  &none         &none         &trans        &trans        &none                       &trans        &none   &none         &none         &trans        &trans
-                                   &trans        &trans        &trans                      &trans        &trans  &trans
+&none  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &none  &none  &kp F6        &kp F7       &kp F8        &kp F9        &kp F10       &none
+&none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &none  &none  &kp NUMBER_6  &kp N7       &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
+&none  &none         &none         &trans        &trans        &none                       &trans        &kp LA(SQT)  &kp LA(O)     &kp LA(A)     &trans        &trans
+                                   &trans        &trans        &trans                      &trans        &trans       &trans
             >;
         };
 
         layer_2 {
             display-name = "CONTROL";
             bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans       &bt BT_CLR      &trans  &trans  &kp C_VOLUME_UP    &trans          &kp UP_ARROW      &trans           &trans           &trans
-&trans  &trans        &trans        &trans        &trans       &trans          &trans  &trans  &kp K_MUTE         &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT_ARROW  &trans           &trans
-&trans  &none         &trans        &sys_reset    &bootloader  &studio_unlock                  &kp C_VOLUME_DOWN  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT       &rgb_ug RGB_TOG  &trans
-                                    &trans        &trans       &trans                          &trans             &trans          &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none        &bt BT_CLR  &trans  &trans  &kp C_VOLUME_UP    &trans          &kp UP_ARROW      &trans           &trans           &trans
+&trans  &tog 4        &trans        &trans        &trans       &trans      &trans  &trans  &kp K_MUTE         &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT_ARROW  &trans           &trans
+&trans  &none         &trans        &sys_reset    &bootloader  &none                       &kp C_VOLUME_DOWN  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT       &rgb_ug RGB_TOG  &trans
+                                    &trans        &trans       &trans                      &trans             &trans          &trans
             >;
 
             label = "SYS";
@@ -88,6 +91,35 @@
             >;
 
             label = "SYMBOL";
+        };
+
+        os_linux {
+            display-name = "linux";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                  &trans  &trans  &trans
+            >;
+        };
+
+        danish_linux {
+            display-name = "DK_LINUX";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp RA(Z)  &kp RA(L)  &kp RA(W)  &trans  &trans
+                        &trans  &trans  &trans                  &trans  &trans     &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        danish_linux_cond {
+            if-layers = <1 4>;
+            then-layer = <5>;
         };
     };
 };
